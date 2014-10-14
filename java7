@@ -1,0 +1,30 @@
+public class Test {
+public static void main(String[] args)throws WeightException{
+ WeigthCheck wc = new WeigthCheck();
+ float f = Float.parseFloat(args[0]);
+ if(wc.check(f)){
+  System.out.println("您可以参加游戏。");
+ }else{
+   throw new WeightException("你不能参加游戏");
+ }
+}
+}
+
+public class WeigthCheck{
+  public boolean check(float f){
+    boolean flag = false;
+    if(40 < f && f < 100){
+     flag = true;
+    }
+    return flag;
+  }
+}
+
+public class WeightException extends Exception{
+  public WeightException(){
+    super();
+  }
+  public WeightException(String s){
+    super(s);
+  }
+}
