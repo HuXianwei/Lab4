@@ -1,0 +1,57 @@
+mport java.util.*;                                     //导入包
+public class game {
+ public static void main (String[]args){
+    Scanner in = new Scanner(System.in);    //导入  Scanner 
+    
+    System.out.println("-----------------猜拳游戏-------------------");
+    System.out.println("请出拳  （1.剪刀  2.石头  3.布）");
+    
+    int ren=in.nextInt();                   //我们人输入的值         命为 ren
+    int computer=(int)(Math.random()*3)+1;  //电脑随机取得值         命为computer
+    
+    String Kang="布";                         //这是我做的一个标记 
+    String Kang2="布";                        //这是给电脑做的一个标记
+    switch (ren){
+      
+      case 1 :
+      Kang="剪刀";
+      break;
+      
+      case 2:
+      Kang="石头";
+      break;
+      
+      case 3:
+      Kang="布";
+      break;
+    }
+
+switch (computer){
+      case 1:
+      Kang2="剪刀";
+      break;
+      
+      case 2:
+      Kang2="石头";
+      break;
+       
+      case 3:
+      Kang2="布";
+      break;
+    }
+
+if(ren==computer){
+     System.out.println("平局了");
+    }else if (ren==1 && computer==2) {
+       System.out.println("  你输了     #-_-   你出的是"+Kang+   "   电脑出的是"+Kang2);
+    }else if (ren==2 && computer==3){
+             System.out.println("  你输了     #-_-   你出的是"+Kang+   "   电脑出的是"+Kang2);
+    }else {
+                System.out.println("  你赢了     ^-^ "+"你出的是"+Kang +  "   电脑出的是"+Kang2);
+    
+    }
+
+System.out.println("-----------------猜拳游戏-------------------");
+
+}
+}
