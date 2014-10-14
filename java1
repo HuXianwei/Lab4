@@ -1,0 +1,28 @@
+public class tt
+{ private int x=2;
+
+public tt(int b)
+  {b=x;}
+	public int cc(int b)
+	{
+		b=x*2;
+	
+		return b;
+	}
+
+}
+
+这个是函数：import java .util.Scanner;
+public class ssa {
+	public static void main(String[] args)
+	{
+		Scanner a =new Scanner(System.in);
+		int b=1;
+		b=a.nextInt();
+		tt cd =new tt(b);
+	
+		int sd= cd.cc(b);
+		System.out.print(+b);
+	}
+
+}
