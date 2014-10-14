@@ -1,0 +1,51 @@
+public class Test {
+     public static void main(String[] args){
+         printTriangle_1(5);
+         System.out.println("--------------");
+         printTriangle_2(5);
+         System.out.println("--------------");
+         printTriangle_3(5);
+         System.out.println("--------------");
+         printTriangle_4(5);
+
+     }
+
+     public static void printTriangle_1(int n){
+         for(int i=1;i<=n;i++){
+             for(int j=1;j<=i;j++){
+                 System.out.print("*");
+             }
+             System.out.println("");
+         }
+     }
+     public static void printTriangle_2(int n){
+         for(int i=1;i<=n;i++){
+             for(int j=1;j<=n-i+1;j++)
+                 System.out.print("*");
+             System.out.println("");
+         }
+
+     }
+     public static void printTriangle_3(int n){
+         for(int i=1;i<=n/2+1;i++){
+             for(int j=1;j<=i;j++)
+                 System.out.print("*");
+             System.out.println("");
+         }
+         for(int i=1;i<=n/2;i++){
+             for(int j=1;j<=n/2-i+1;j++)
+                 System.out.print("*");
+             System.out.println("");
+         }
+     }
+     public static void printTriangle_4(int n){
+         for(int i=1;i<=n;i++){//i表示行数
+             for(int k=1;k<=n-i;k++)//k表示当前行打印的空个数
+                 System.out.print(" ");
+             for(int j=1;j<=2*i-1;j++)//j表示当前打印的*数
+                 System.out.print("*");
+             System.out.println();
+         }
+     }
+
+ }
