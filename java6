@@ -1,0 +1,76 @@
+import java.io.IOException;
+import java.util.ArrayList;
+import java.util.Iterator;
+
+public class Test {
+ /**
+  * @param args
+  */
+ public static void main(String[] args) {
+  // TODO Auto-generated method stub
+  boolean flag = true;// 是否还输入
+  Student stu = null;
+  ArrayList al = new ArrayList();  
+  byte[] by = new byte[20];//用来存成绩
+  int count = 0;
+  while (flag) {
+   stu = new Student();
+   try {
+    System.in.read(by,0,by.length); 
+    stu.setStuId(count);
+    try{
+     stu.setStuScore(Integer.parseInt(new String(by).trim())); 
+    }catch(NumberFormatException  e){
+     e.printStackTrace();
+     System.out.println("成绩必须为整数!");
+    }
+    
+    al.add(stu);
+    System.out.println("是否继续输入: (Y/N)");
+    
+    char ch = (char) System.in.read();    
+    if (ch == 'N' || ch == 'n')
+     flag = false;   
+    System.in.read(by); //这句并不是向数组读入数据
+    count++;
+   } catch (IOException e) {
+    // TODO Auto-generated catch block
+    e.printStackTrace();
+   }   
+  }
+  int max = 0;//最高成绩
+  int min = Integer.MAX_VALUE;//最低成绩
+  int temp = 0;
+  for (Iterator iter = al.iterator(); iter.hasNext();) {
+   Student element = (Student) iter.next();
+   temp = element.getStuScore();    
+   if(max < temp) max = temp;
+   if(min > temp) min = temp;   
+  }  
+  System.out.println("Max:"+ max);
+  System.out.println("Min:"+min);
+ }
+
+}
+
+class Student {
+ private int stuId;// 学生ID
+
+ private int stuScore;// 学生成绩
+
+ public int getStuId() {
+  return stuId;
+ }
+
+ public void setStuId(int stuId) {
+  this.stuId = stuId;
+ }
+
+ public int getStuScore() {
+  return stuScore;
+ }
+
+ public void setStuScore(int stuScore) {
+  this.stuScore = stuScore;
+ }
+}
